@@ -1,4 +1,7 @@
-import { json } from "@remix-run/node";
+import {
+  json,
+  redirect,
+} from "@remix-run/node";
 import {
   Form,
   Link,
@@ -15,7 +18,7 @@ import { getContacts, getContact , createEmptyContact  } from "./data";
 
 export const action = async () => {
   const contact = await createEmptyContact();
-  return json({ contact });
+  return redirect(`/contacts/${contact.id}/edit`);
 }
 
 export const loader = async () => {
