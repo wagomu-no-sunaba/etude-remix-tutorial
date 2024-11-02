@@ -6,12 +6,13 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { LinksFunction } from "@remix-run/node";
-import appStylesHref from "./app.css";
+import appStyleHref from "./app.css";
 
+// すべてのrouteでエクスポートできるlink関数
+// <Links />コンポーネントにレンダリングされるらしい
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: appStylesHref },
+  { rel: "stylesheet", href: appStyleHref },
 ]
-
 export default function App() {
   return (
     <html lang="en">
